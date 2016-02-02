@@ -46,22 +46,26 @@ exports.config = {
         browserName: 'firefox',
         version: 37,
         name: 'Firefox Selenium tests',
-        build: 'build-' + process.env.TRAVIS_BUILD_ID
+        build: 'build-' + process.env.TRAVIS_BUILD_ID,
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER
     },{
         browserName: 'chrome',
         version: 43,
         name: 'Chrome Selenium tests',
-        build: 'build-' + process.env.TRAVIS_BUILD_ID
+        build: 'build-' + process.env.TRAVIS_BUILD_ID,
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER
     },{
         browserName: 'internet explorer',
         version: 11,
         name: 'IE Selenium tests',
-        build: 'build-' + process.env.TRAVIS_BUILD_ID
+        build: 'build-' + process.env.TRAVIS_BUILD_ID,
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER
     },{
         browserName: 'safari',
         version: 6,
         name: 'Safari Selenium tests',
-        build: 'build-' + process.env.TRAVIS_BUILD_ID
+        build: 'build-' + process.env.TRAVIS_BUILD_ID,
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER
     }],
     //
     // ===================
