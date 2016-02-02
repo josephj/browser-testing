@@ -1,19 +1,30 @@
+var os = require('os');
+
 module.exports = function (grunt) {
+    grunt.loadNpmTasks('grunt-selenium-server');
     grunt.initConfig({
         pkg: grunt.file.readJSON('./package.json'),
-         sauce_connect: {
-            options: {
-                username: process.env.SAUCE_USERNAME,
-                key: process.env.SAUCE_ACCESS_KEY,
-                verbose: true
-            },
-            server: {}
+        'start-selenium-server': {
+            dev: {
+                options: {
+                    autostop: false,
+                    downloadUrl: 'https://selenium-release.storage.googleapis.com/2.46/selenium-server-standalone-2.46.0.jar',
+                    downloadLocation: os.tmpdir(),
+                    serverOptions: {},
+                    systemProperties: {}
+                 }
+
+            }
+        },
+        'stop-selenium-server': {
+              dev: {}
         },
         connect: {
             options: {
                 port: 8585,
                 base: './'
-            }
+            },
+            main: {}
         },
         webdriver: {
             local: {
@@ -27,9 +38,8 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-webdriver');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-sauce-connect-launcher');
 
-    grunt.registerTask('test:local', ['sauce_connect', 'connect', 'webdriver:local', 'sauce-connect-close']);
+    grunt.registerTask('test:local', ['start-selenium-server', 'connect', 'webdriver:local', 'stop-selenium-server']);
     grunt.registerTask('test:saucelabs', ['connect', 'webdriver:saucelabs']);
     grunt.registerTask('default', ['test:local']);
 };
