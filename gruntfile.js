@@ -1,18 +1,18 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('./package.json'),
-        connect: {
-            local: {
-                options: {
-                    port: 8080,
-                    base: './'
-                }
+         sauce_connect: {
+            options: {
+                username: process.env.SAUCE_USERNAME,
+                key: process.env.SAUCE_ACCESS_KEY,
+                verbose: true
             },
-            travis_ci: {
-                options: {
-                    port: 8080,
-                    base: './'
-                }
+            server: {}
+        },
+        connect: {
+            options: {
+                port: 8585,
+                base: './'
             }
         },
         webdriver: {
@@ -27,8 +27,9 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-webdriver');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-sauce-connect-launcher');
 
-    grunt.registerTask('test:local', ['connect:local', 'webdriver:local']);
-    grunt.registerTask('test:saucelabs', ['connect:travis_ci', 'webdriver:saucelabs']);
+    grunt.registerTask('test:local', ['sauce_connect', 'connect', 'webdriver:local', 'sauce-connect-close']);
+    grunt.registerTask('test:saucelabs', ['connect', 'webdriver:saucelabs']);
     grunt.registerTask('default', ['test:local']);
 };
