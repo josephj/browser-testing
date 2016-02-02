@@ -81,7 +81,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", the base url gets prepended.
-    baseUrl: 'http://josephj.github.io',
+    baseUrl: 'http://localhost:8989',
 
     //
     // Default timeout for all waitForXXX commands.
