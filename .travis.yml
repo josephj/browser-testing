@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "4.1"
+before_script:
+  - npm install -g wdio
+  - npm install -g jasmine
+addons:
+  sauce_connect:
+    username: "josephj6802_saucelab"
+    access_key:
+      secure: "WEIOzAHIH12SIfhvUFy2p8T9X5YwXAqwaLogJsoCWJ84U2Kb7sMS2WEvrlly1/uXIIjzIBvCR1SP8HxHIMUcQN04tmBekft5StSaC8dTzB5f05s+Ijk540y87yswl6WO7KHZx931sJRHwjBs4N5FIoLv0A36El01dQjphzWO7fMUDQ59cnP5HWVguSS3bH5KO5jPzMixLyHh2qTRCwISp1X1iY9PdkZLAe58oZOqJHasP4hQb3CHWHwM6Isg6qEyrnxJzG4DYeecKxyWl2TCD2154TQIh85R6OJEg5C++6C0M11jiDgu4hIzdzQXreTJE7NRWooYZsjgL98ysubSy+euGSVISu4i/wZvWtoa0hAYUzBFA2H6lbuYf1uAZj2L6mMMia/y7iEHrsBscf4LYQVCt8NJqD+yjvxswovGABtLlrDF0ivNQiub/ExKytnMuw14fwYCDLlSFF02bMwcxGcLcx+zWP6w5qIbciDI9GVFao1S1gtf9Y0oAHHxP10fsqNF8gzvKUuzp5tITh90+dsJWdjVTTy5qkaDsXTXsa9YURzjYanQxxExdNfuVtkDNcEwqd0qSZG45AJq4YBbzRiD0b3y06Q/eWxk7dqKAlbpvdHCwoUUJ0utTb2QBFun5v89HJMVUYVEera/R0OM05jLWcbkUVuJXYfQny44CDw="

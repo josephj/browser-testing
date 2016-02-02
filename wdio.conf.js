@@ -26,7 +26,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/*_test.js'
+        './tests/*_test.js'
     ],
     //
     // ============
@@ -81,7 +81,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", the base url gets prepended.
-    baseUrl: 'http://nodejs.org',
+    baseUrl: 'http://josephj.github.io',
 
     //
     // Default timeout for all waitForXXX commands.
