@@ -5,10 +5,13 @@ Set the following Environment Variables in Travis CI
 * SAUCE_USERNAME 
 * SAUCE_ACCESS_KEY 
 
-
+npm install -g grunt-cli
 npm install -g wdio
 npm install -g selenium-standalone@latest
 npm install -g jasmine
 
 npm install
+
+try local testing with standalone selenium server: grunt test:local (npm test or grunt)
+try multiple browsers testing with SauceLabs: grunt test:saucelab
 
