@@ -3,7 +3,7 @@ node_js:
   - "4.1"
 before_script:
   - npm install grunt-cli -g
-  - npm install wdio -g
+  - npm install webdriverio -g
   - npm install jasmine -g
 addons:
   sauce_connect:
