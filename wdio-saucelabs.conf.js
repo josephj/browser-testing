@@ -81,7 +81,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", the base url gets prepended.
-    baseUrl: 'http://localhost:8989',
+    baseUrl: 'http://localhost',
 
     //
     // Default timeout for all waitForXXX commands.
@@ -109,6 +109,6 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     jasmineNodeOpts: {
-        defaultTimeoutInterval: 10000
+        defaultTimeoutInterval: 20000
     }
 };
