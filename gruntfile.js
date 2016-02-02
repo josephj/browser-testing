@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('./package.json'),
         connect: {
-            test: {
+            local: {
                 options: {
                     port: 8989,
                     base: './'
@@ -10,8 +10,11 @@ module.exports = function (grunt) {
             }
         },
         webdriver: {
-            test: {
-                configFile: './wdio.conf.js'
+            local: {
+                configFile: './wdio-local.conf.js'
+            },
+            saucelabs: {
+                configFile: './wdio-saucelabs.conf.js'
             }
         }
     });
@@ -19,5 +22,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-webdriver');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['connect:test', 'webdriver:test']);
+    grunt.registerTask('test:local', ['connect', 'webdriver:local']);
+    grunt.registerTask('test:saucelabs', ['connect', 'webdriver:saucelabs']);
+    grunt.registerTask('default', ['test:local']);
 };

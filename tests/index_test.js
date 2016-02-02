@@ -1,7 +1,11 @@
 // browser - webdriver instance
-describe('mocha spec examples', function() {
-    it('should get home page', function* () {
-        yield browser.url('/index.html');
+describe('Index Page', function() {
+    it('should have title', function* () {
+        yield browser.url('/');
         expect(yield browser.getTitle()).toBe('Browser Testing');
+    });
+    it('shoud have Stackla widget', function* () {
+        yield browser.url('/');
+        expect(yield browser.isExisting('.stackla-widget'));
     });
 });
