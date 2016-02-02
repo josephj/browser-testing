@@ -9,7 +9,6 @@ exports.config = {
     //
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
-    build: "build-1234",
 
     //
     // If you are using Sauce Labs, WebdriverIO takes care to update the job information
@@ -47,22 +46,22 @@ exports.config = {
         browserName: 'firefox',
         version: 37,
         name: 'Firefox Selenium tests',
-        build: process.env.BUILD_NUMBER
+        build: 'build-' + process.env.TRAVIS_BUILD_ID
     },{
         browserName: 'chrome',
         version: 43,
         name: 'Chrome Selenium tests',
-        build: process.env.BUILD_NUMBER
+        build: 'build-' + process.env.TRAVIS_BUILD_ID
     },{
         browserName: 'internet explorer',
         version: 11,
         name: 'IE Selenium tests',
-        build: process.env.BUILD_NUMBER
+        build: 'build-' + process.env.TRAVIS_BUILD_ID
     },{
         browserName: 'safari',
         version: 6,
         name: 'Safari Selenium tests',
-        build: process.env.BUILD_NUMBER
+        build: 'build-' + process.env.TRAVIS_BUILD_ID
     }],
     //
     // ===================
