@@ -1,6 +1,7 @@
 node version: v4.2.6
 
 Download chromedriver: http://chromedriver.storage.googleapis.com/index.html?path=2.21/ and unzip and put in PATH
+Download safari plugin: http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz and click to install
 
 Set the following Environment Variables in Travis CI
 
