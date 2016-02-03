@@ -1,12 +1,14 @@
 node version: v4.2.6
 
+Download chromedriver: http://chromedriver.storage.googleapis.com/index.html?path=2.21/ and unzip and put in PATH
+
 Set the following Environment Variables in Travis CI
 
 * SAUCE_USERNAME 
 * SAUCE_ACCESS_KEY 
 
 npm install -g grunt-cli
-npm install -g wdio
+npm install -g webdriverio
 npm install -g selenium-standalone@latest
 npm install -g jasmine
 
