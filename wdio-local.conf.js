@@ -1,5 +1,5 @@
 exports.config = {
-    
+
     //
     // ==================
     // Specify Test Files
@@ -29,9 +29,9 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
-        browserName: 'firefox'
-    }],
+    capabilities: [
+      {browserName: 'chrome'}
+    ],
     //
     // ===================
     // Test Configurations
@@ -87,7 +87,7 @@ exports.config = {
     // The following are supported: dot (default), spec and xunit
     // see also: http://webdriver.io/guide/testrunner/reporters.html
     reporter: 'spec',
-    
+
     //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
@@ -102,7 +102,7 @@ exports.config = {
             // do something
         }
     },
-    
+
     //
     // =====
     // Hooks
