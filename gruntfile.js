@@ -1,5 +1,4 @@
 var os = require('os');
-
 module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-selenium-server');
     grunt.initConfig({
